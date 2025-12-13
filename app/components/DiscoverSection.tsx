@@ -37,7 +37,7 @@ export default function DiscoverSection() {
             Discover
           </p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl text-gray-900 mb-3 sm:mb-4">
-            What makes Room 25
+            What makes Room 24
             <br />
             different
           </h2>

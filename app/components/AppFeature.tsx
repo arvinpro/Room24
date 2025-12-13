@@ -45,11 +45,11 @@ export default function AppFeature() {
     [0.3, 0.6, 0.7],
     ["#ffffff", "#ffffff", "#0f172a"]
   );
-const bgColor3 = useTransform(
-  scrollYProgress,
-  [0.6, 1],
-  ["#1f2937", "#1f2937"] // gray-800
-);
+  const bgColor3 = useTransform(
+    scrollYProgress,
+    [0.6, 1],
+    ["#1f2937", "#1f2937"] // gray-800
+  );
 
   // Text color transforms
   const textColor1 = useTransform(
@@ -67,8 +67,6 @@ const bgColor3 = useTransform(
     [0.6, 1],
     ["#ffffff", "#ffffff"]
   );
-
-
 
   return (
     <div ref={containerRef} className="relative">
@@ -107,6 +105,28 @@ const bgColor3 = useTransform(
             </div>
 
             <motion.div
+                className="flex justify-center items-end relative z-10 bottom-10"
+                style={{
+                  y: useTransform(scrollYProgress, [0.3, 0.6], [60, 0]),
+                }}
+              >
+                <Image
+                  src="/images/phone67.png"
+                  alt="Phone Screen"
+                  width={420}
+                  height={800}
+                  className="
+            w-[280px]
+            sm:w-[320px]
+            md:w-[360px]
+            lg:w-[400px]
+            object-contain
+            block sm:hidden
+          "
+                />
+              </motion.div>
+
+            <motion.div
               className="flex-1 flex justify-center items-end mt-8 mb-8 min-h-[400px]"
               style={{
                 y: useTransform(scrollYProgress, [0, 0.3], [0, -50]),
@@ -117,7 +137,7 @@ const bgColor3 = useTransform(
                 alt="Design Features"
                 width={1000}
                 height={800}
-                className="object-contain object-bottom max-w-full"
+                className="object-contain object-bottom max-w-full hidden sm:block"
                 priority
               />
             </motion.div>
@@ -126,99 +146,101 @@ const bgColor3 = useTransform(
 
         {/* Section 2:*/}
         <motion.section
-  style={{
-    y: y2,
-    opacity: opacity2,
-    scale: scale2,
-    backgroundColor: bgColor2,
-    color: textColor2,
-    zIndex: stackZIndex2,
-  }}
-  className="absolute inset-0 flex flex-col justify-center items-center pt-20 pb-8 px-6"
->
-  <div className="container mx-auto max-w-6xl h-full flex flex-col">
-    <div className="text-center mb-12">
-      <h2 className="text-4xl md:text-4xl font-semibold mb-4">
-        Travel Made Easy
-      </h2>
-      <p className="max-w-2xl mx-auto opacity-70 text-[0.8rem]">
-        Book hotels, connect with guides, and explore confidently.
-      </p>
-      <motion.button
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="bg-red-500 hover:bg-red-600 text-white mt-4 cursor-pointer px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-sm sm:text-base font-medium transition-colors flex items-center gap-2 mx-auto shadow-lg hover:shadow-xl"
-      >
-        <CloudDownload size={18} className="sm:w-5 sm:h-5" />
-        Get the App & Manage
-      </motion.button>
+          style={{
+            y: y2,
+            opacity: opacity2,
+            scale: scale2,
+            backgroundColor: bgColor2,
+            color: textColor2,
+            zIndex: stackZIndex2,
+          }}
+          className="absolute inset-0 flex flex-col justify-center items-center pt-20 pb-8 px-6"
+        >
+          <div className="container mx-auto max-w-6xl h-full flex flex-col">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-4xl font-semibold mb-4">
+                Travel Made Easy
+              </h2>
+              <p className="max-w-2xl mx-auto opacity-70 text-[0.8rem]">
+                Book hotels, connect with guides, and explore confidently.
+              </p>
+              <motion.button
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-red-500 hover:bg-red-600 text-white mt-4 cursor-pointer px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-sm sm:text-base font-medium transition-colors flex items-center gap-2 mx-auto shadow-lg hover:shadow-xl"
+              >
+                <CloudDownload size={18} className="sm:w-5 sm:h-5" />
+                Get the App & Manage
+              </motion.button>
 
-      <p className="flex items-center justify-center gap-2 max-w-2xl mx-auto opacity-90 mt-3 text-[0.8rem] tracking-wide">
-        <BadgeCheck className="w-5 h-5 shrink-0 text-green-700" />
-        <span>Available on IOS & Android</span>
-      </p>
-    </div>
+              <p className="flex items-center justify-center gap-2 max-w-2xl mx-auto opacity-90 mt-3 text-[0.8rem] tracking-wide">
+                <BadgeCheck className="w-5 h-5 shrink-0 text-green-700" />
+                <span>Available on IOS & Android</span>
+              </p>
+            </div>
 
-    <div className="relative flex-1 grid grid-cols-3 gap-6 items-end">
-      {/* Image 1 - Bottom Left */}
-      <motion.div
-        className="flex justify-center items-end relative z-10 bottom-30"
-        style={{
-          y: useTransform(scrollYProgress, [0.3, 0.6], [60, 0]),
-        }}
-      >
-        <Image
-          src="/images/booking.png"
-          alt="Booking Screen"
-          width={400}
-          height={800}
-          className="
+            <div className="relative flex-1 flex flex-col sm:grid sm:grid-cols-3 gap-6 items-end">
+              {/* Image 1 - Bottom Left */}
+              <motion.div
+                className="flex justify-center items-center relative z-10  mt-auto sm:bottom-10"
+                style={{
+                  y: useTransform(scrollYProgress, [0.3, 0.6], [60, 0]),
+                }}
+              >
+                <Image
+                  src="/images/booking.png"
+                  alt="Booking Screen"
+                  width={400}
+                  height={800}
+                  className="
+             w-[90vw]             
+    max-w-[380px]
+    sm:w-[320px]
+    md:w-[360px]
+    lg:w-[400px]
+    object-contain
+          "
+                />
+              </motion.div>
+
+              {/* Image 2 - Bottom Right */}
+              <motion.div
+                className="flex justify-center items-end relative z-10 bottom-10"
+                style={{
+                  y: useTransform(scrollYProgress, [0.3, 0.6], [60, 0]),
+                }}
+              >
+                <Image
+                  src="/images/phone1.png"
+                  alt="Phone Screen"
+                  width={420}
+                  height={800}
+                  className="
             w-[280px]
             sm:w-[320px]
             md:w-[360px]
             lg:w-[400px]
             object-contain
+            block
           "
-        />
-      </motion.div>    
+                />
+              </motion.div>
 
-      {/* Image 2 - Bottom Right */}
-      <motion.div
-        className="flex justify-center items-end relative z-10 bottom-10"
-        style={{
-          y: useTransform(scrollYProgress, [0.3, 0.6], [60, 0]),
-        }}
-      >
-        <Image
-          src="/images/phone1.png"
-          alt="Phone Screen"
-          width={420}
-          height={800}
-          className="
-            w-[280px]
-            sm:w-[320px]
-            md:w-[360px]
-            lg:w-[400px]
-            object-contain
-          "
-        />
-      </motion.div>
-
-        {/* Image 3 */}
-      <motion.div
-        className="flex justify-center items-center relative bottom-55"
-        style={{
-          y: useTransform(scrollYProgress, [0.3, 0.6], [0, 0]),
-          zIndex: 20,
-        }}
-      >
-        <Image
-          src="/images/phone67.png"
-          alt="Feature Screen"
-          width={450}
-          height={900}
-          className="
+              {/* Image 3 */}
+              <motion.div
+                className="flex justify-center items-center relative bottom-55"
+                style={{
+                  y: useTransform(scrollYProgress, [0.3, 0.6], [0, 0]),
+                  zIndex: 20,
+                }}
+              >
+                <Image
+                  src="/images/phone67.png"
+                  alt="Feature Screen"
+                  width={450}
+                  height={900}
+                  className="
             w-[320px]
             sm:w-[360px]
             md:w-[400px]
@@ -227,12 +249,13 @@ const bgColor3 = useTransform(
             h-auto
             max-h-[85vh]
             -mt-80px sm:mt-[-100px] md:mt-[-120px]
+            hidden sm:block
           "
-        />
-      </motion.div>
-    </div>
-  </div>
-</motion.section>
+                />
+              </motion.div>
+            </div>
+          </div>
+        </motion.section>
 
         {/* Section 3*/}
         <motion.section
@@ -277,7 +300,6 @@ const bgColor3 = useTransform(
                 y: useTransform(scrollYProgress, [0.6, 1], [50, 0]),
               }}
             >
-              
               <Image
                 src="/images/design3.png"
                 alt="Simplify Operations"
