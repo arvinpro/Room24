@@ -85,18 +85,33 @@ export default function AppFeature() {
         >
           <div className="container mx-auto max-w-6xl h-full flex flex-col">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl mb-4 font-normal">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-4xl md:text-5xl mb-4 font-normal"
+              >
                 Designed for travelers.
                 <br />
                 Made for convenience.
-              </h2>
-              <p className="mb-4">
-                Clean, modern, intuitive — everything you need on the go.
-              </p>
-              <motion.button
-                initial={{ opacity: 0, y: 10 }}
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="mb-4"
+              >
+                Clean, modern, intuitive — everything you need on the go.
+              </motion.p>
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className="bg-red-500 hover:bg-red-600 text-white cursor-pointer px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-sm sm:text-base font-medium transition-colors flex items-center gap-2 mx-auto shadow-lg hover:shadow-xl"
               >
                 <CloudDownload size={18} className="sm:w-5 sm:h-5" />
@@ -105,10 +120,16 @@ export default function AppFeature() {
             </div>
 
             <motion.div
-                className="flex justify-center items-end relative z-10 bottom-10"
-                style={{
-                  y: useTransform(scrollYProgress, [0.3, 0.6], [60, 0]),
-                }}
+              className="flex justify-center items-end relative z-10 bottom-10"
+              style={{
+                y: useTransform(scrollYProgress, [0.3, 0.6], [60, 0]),
+              }}
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3 }}
               >
                 <Image
                   src="/images/phone67.png"
@@ -125,6 +146,7 @@ export default function AppFeature() {
           "
                 />
               </motion.div>
+            </motion.div>
 
             <motion.div
               className="flex-1 flex justify-center items-end mt-8 mb-8 min-h-[400px]"
@@ -132,14 +154,21 @@ export default function AppFeature() {
                 y: useTransform(scrollYProgress, [0, 0.3], [0, -50]),
               }}
             >
-              <Image
-                src="/images/design.png"
-                alt="Design Features"
-                width={1000}
-                height={800}
-                className="object-contain object-bottom max-w-full hidden sm:block"
-                priority
-              />
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <Image
+                  src="/images/design.png"
+                  alt="Design Features"
+                  width={1000}
+                  height={800}
+                  className="object-contain object-bottom max-w-full hidden sm:block"
+                  priority
+                />
+              </motion.div>
             </motion.div>
           </div>
         </motion.section>
@@ -158,26 +187,47 @@ export default function AppFeature() {
         >
           <div className="container mx-auto max-w-6xl h-full flex flex-col">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-4xl font-semibold mb-4">
-                Travel Made Easy
-              </h2>
-              <p className="max-w-2xl mx-auto opacity-70 text-[0.8rem]">
-                Book hotels, connect with guides, and explore confidently.
-              </p>
-              <motion.button
-                initial={{ opacity: 0, y: 10 }}
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-4xl md:text-4xl font-semibold mb-4"
+              >
+                Travel Made Easy
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="max-w-2xl mx-auto opacity-70 text-[0.8rem]"
+              >
+                Book hotels, connect with guides, and explore confidently.
+              </motion.p>
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className="bg-red-500 hover:bg-red-600 text-white mt-4 cursor-pointer px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-sm sm:text-base font-medium transition-colors flex items-center gap-2 mx-auto shadow-lg hover:shadow-xl"
               >
                 <CloudDownload size={18} className="sm:w-5 sm:h-5" />
                 Get the App & Manage
               </motion.button>
 
-              <p className="flex items-center justify-center gap-2 max-w-2xl mx-auto opacity-90 mt-3 text-[0.8rem] tracking-wide">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="flex items-center justify-center gap-2 max-w-2xl mx-auto opacity-90 mt-3 text-[0.8rem] tracking-wide"
+              >
                 <BadgeCheck className="w-5 h-5 shrink-0 text-green-700" />
                 <span>Available on IOS & Android</span>
-              </p>
+              </motion.p>
             </div>
 
             <div className="relative flex-1 flex flex-col sm:grid sm:grid-cols-3 gap-6 items-end">
@@ -188,12 +238,18 @@ export default function AppFeature() {
                   y: useTransform(scrollYProgress, [0.3, 0.6], [60, 0]),
                 }}
               >
-                <Image
-                  src="/images/booking.png"
-                  alt="Booking Screen"
-                  width={400}
-                  height={800}
-                  className="
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <Image
+                    src="/images/booking.png"
+                    alt="Booking Screen"
+                    width={400}
+                    height={800}
+                    className="
              w-[90vw]             
     max-w-[380px]
     sm:w-[320px]
@@ -201,7 +257,8 @@ export default function AppFeature() {
     lg:w-[400px]
     object-contain
           "
-                />
+                  />
+                </motion.div>
               </motion.div>
 
               {/* Image 2 - Bottom Right */}
@@ -211,12 +268,18 @@ export default function AppFeature() {
                   y: useTransform(scrollYProgress, [0.3, 0.6], [60, 0]),
                 }}
               >
-                <Image
-                  src="/images/phone1.png"
-                  alt="Phone Screen"
-                  width={420}
-                  height={800}
-                  className="
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
+                  <Image
+                    src="/images/phone1.png"
+                    alt="Phone Screen"
+                    width={420}
+                    height={800}
+                    className="
             w-[280px]
             sm:w-[320px]
             md:w-[360px]
@@ -224,7 +287,8 @@ export default function AppFeature() {
             object-contain
             block
           "
-                />
+                  />
+                </motion.div>
               </motion.div>
 
               {/* Image 3 */}
@@ -235,12 +299,18 @@ export default function AppFeature() {
                   zIndex: 20,
                 }}
               >
-                <Image
-                  src="/images/phone67.png"
-                  alt="Feature Screen"
-                  width={450}
-                  height={900}
-                  className="
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
+                  <Image
+                    src="/images/phone67.png"
+                    alt="Feature Screen"
+                    width={450}
+                    height={900}
+                    className="
             w-[320px]
             sm:w-[360px]
             md:w-[400px]
@@ -251,7 +321,8 @@ export default function AppFeature() {
             -mt-80px sm:mt-[-100px] md:mt-[-120px]
             hidden sm:block
           "
-                />
+                  />
+                </motion.div>
               </motion.div>
             </div>
           </div>
@@ -271,27 +342,48 @@ export default function AppFeature() {
         >
           <div className="container mx-auto max-w-full h-full flex flex-col">
             <div className="text-center mb-30">
-              <h2 className="text-4xl md:text-5xl  mb-4">
-                Simplify Hotel Operations
-              </h2>
-              <p className="max-w-2xl text-[0.8rem] mx-auto opacity-90">
-                Manage bookings, track revenue, and communicate with guests
-                effortlessly.
-              </p>
-              <motion.button
-                initial={{ opacity: 0, y: 10 }}
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-4xl md:text-5xl  mb-4"
+              >
+                Simplify Hotel Operations
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="max-w-2xl text-[0.8rem] mx-auto opacity-90"
+              >
+                Manage bookings, track revenue, and communicate with guests
+                effortlessly.
+              </motion.p>
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className="bg-red-500 hover:bg-red-600 text-white mt-4 cursor-pointer px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-sm sm:text-base font-medium transition-colors flex items-center gap-2 mx-auto shadow-lg hover:shadow-xl"
               >
                 <CloudDownload size={18} className="sm:w-5 sm:h-5" />
                 Get the App & Manage
               </motion.button>
 
-              <p className="flex items-center justify-center gap-2 max-w-2xl mx-auto opacity-90 mt-3 text-[0.8rem] tracking-wide">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="flex items-center justify-center gap-2 max-w-2xl mx-auto opacity-90 mt-3 text-[0.8rem] tracking-wide"
+              >
                 <BadgeCheck className="w-4 h-4 shrink-0" />
                 <span>Available on IOS & Android</span>
-              </p>
+              </motion.p>
             </div>
 
             <motion.div
@@ -300,19 +392,26 @@ export default function AppFeature() {
                 y: useTransform(scrollYProgress, [0.6, 1], [50, 0]),
               }}
             >
-              <Image
-                src="/images/design3.png"
-                alt="Simplify Operations"
-                width={1200}
-                height={1200}
-                className="object-contain object-bottom max-w-full relative top-0 sm:top-15 md:top-21"
-              />
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <Image
+                  src="/images/design3.png"
+                  alt="Simplify Operations"
+                  width={1200}
+                  height={1200}
+                  className="object-contain object-bottom max-w-full relative top-0 sm:top-15 md:top-21"
+                />
+              </motion.div>
             </motion.div>
           </div>
         </motion.section>
       </div>
 
-      {/* Spacer divs to enable scrolling */}
+   
       <div className="h-[300vh]">
         <div className="h-screen"></div>
         <div className="h-screen"></div>
