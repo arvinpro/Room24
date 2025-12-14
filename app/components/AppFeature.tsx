@@ -23,7 +23,7 @@ export default function AppFeature() {
           start: "top top",
           end: "bottom top",
           pin: true, // pin current section
-          pinSpacing: false,
+          pinSpacing: true,
           scrub: 1, // smooth scrubbing
         });
       }
@@ -36,7 +36,7 @@ export default function AppFeature() {
   return (
     <div ref={containerRef} className="relative">
       {/* Section 1*/}
-      <section className="min-h-screen relative z-1 flex flex-col justify-center items-center pt-20 px-6 bg-slate-900 text-white">
+      <section className="min-h-screen relative z-1 flex flex-col justify-center items-center pt-20 px-6 bg-slate-900 text-white overflow-hidden">
         <div className="container mx-auto max-w-6xl flex flex-col">
           <div className="text-center mb-12">
             <motion.h2
@@ -120,7 +120,7 @@ export default function AppFeature() {
       </section>
 
       {/* Section 2:*/}
-      <section className="min-h-screen relative z-2 flex flex-col justify-center items-center pt-20 px-6 bg-gray-100 text-black">
+      <section className="min-h-screen relative z-2 flex flex-col justify-center items-center pt-20 px-6 bg-gray-100 text-black overflow-hidden">
   <div className="container mx-auto max-w-6xl flex flex-col">
     <div className="text-center mb-20">
       <motion.h2
@@ -256,7 +256,7 @@ export default function AppFeature() {
 </section>
 
       {/* Section 3*/}
-      <section className="min-h-screen relative z-3 flex flex-col justify-center items-center pt-20 bg-gray-800 text-white">
+      <section className="min-h-screen relative z-3 flex flex-col justify-center items-center pt-20 bg-gray-800 text-white overflow-hidden">
         <div className="container mx-auto max-w-full h-full flex flex-col">
           {/* Text Content */}
           <div className="text-center px-4 sm:px-6 lg:px-0">
