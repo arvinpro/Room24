@@ -9,7 +9,7 @@ export default function AppFeature() {
     <div className="relative">
       {/* Section 1*/}
       <section className="flex flex-col justify-center items-center pt-20 px-6 bg-slate-900 text-white">
-        <div className="container mx-auto max-w-6xl h-screen flex flex-col">
+        <div className="container mx-auto max-w-6xl h-full flex flex-col">
           <div className="text-center mb-12">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -91,7 +91,7 @@ export default function AppFeature() {
 
       {/* Section 2:*/}
       <section className="flex flex-col justify-center items-center pt-20 px-6 bg-gray-100 text-black">
-        <div className="container mx-auto max-w-6xl min-h-screen flex flex-col">
+        <div className="container mx-auto max-w-6xl h-full flex flex-col">
           <div className="text-center mb-12">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -223,8 +223,8 @@ export default function AppFeature() {
 
       {/* Section 3*/}
       <section className="flex flex-col justify-center items-center pt-20 bg-gray-800 text-white">
-        <div className="container mx-auto max-w-full h-screen flex flex-col">
-          <div className="text-center mb-30">
+        <div className="container mx-auto max-w-full min-h-full flex flex-col">
+          <div className="text-center">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
