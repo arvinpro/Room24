@@ -23,7 +23,7 @@ export default function AppFeature() {
           start: "top top",
           end: "bottom top",
           pin: true, // pin current section
-          pinSpacing: true,
+          pinSpacing: false,
           scrub: 1, // smooth scrubbing
         });
       }
@@ -74,7 +74,7 @@ export default function AppFeature() {
           </div>
 
           {/* MOBILE IMAGE */}
-          <motion.div className="flex justify-center items-end relative z-10  sm:hidden">
+          <motion.div className="flex justify-center items-end relative z-10 md:hidden">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -99,7 +99,7 @@ export default function AppFeature() {
           </motion.div>
 
           {/* DESKTOP IMAGE */}
-          <motion.div className="flex-1 flex justify-center items-end min-h-[400px]  sm:flex">
+          <motion.div className="hidden md:flex flex-1 justify-center items-end min-h-[400px] ">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
