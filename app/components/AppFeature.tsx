@@ -45,47 +45,50 @@ export default function AppFeature() {
             </motion.button>
           </div>
 
-          <motion.div className="flex justify-center items-end  relative  z-10">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <Image
-                src="/images/phone67.png"
-                alt="Phone Screen"
-                width={420}
-                height={800}
-                className="
-            w-[280px]
-            sm:w-[320px]
-            md:w-[360px]
-            lg:w-[400px]
-            object-contain
-            block sm:hidden
-          "
-              />
-            </motion.div>
-          </motion.div>
+        {/* MOBILE IMAGE */}
+<motion.div className="flex justify-center items-end relative z-10 block sm:hidden">
+  <motion.div
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8, delay: 0.3 }}
+  >
+    <Image
+      src="/images/phone67.png"
+      alt="Phone Screen"
+      width={420}
+      height={800}
+      className="
+        w-[280px]
+        sm:w-[320px]
+        md:w-[360px]
+        lg:w-[400px]
+        object-contain
+        pb-11
+      "
+    />
+  </motion.div>
+</motion.div>
 
-          <motion.div className="flex-1 flex justify-center items-end min-h-[400px]">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <Image
-                src="/images/design.png"
-                alt="Design Features"
-                width={1000}
-                height={800}
-                className="object-contain object-bottom max-w-full hidden sm:block relative bottom-0"
-                priority
-              />
-            </motion.div>
-          </motion.div>
+{/* DESKTOP IMAGE */}
+<motion.div className="flex-1 flex justify-center items-end min-h-[400px] hidden sm:flex">
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8, delay: 0.4 }}
+  >
+    <Image
+      src="/images/design.png"
+      alt="Design Features"
+      width={1000}
+      height={800}
+      className="object-contain object-bottom max-w-full"
+      priority
+    />
+  </motion.div>
+</motion.div>
+
         </div>
       </section>
 
